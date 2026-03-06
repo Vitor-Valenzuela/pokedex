@@ -16,6 +16,9 @@
 <body>
   
   <main>
+    <div class="loading" style="display: none;">
+      <div class="spinner"></div>
+    </div>
     <img src="#" alt="pokemon" class="pokemon__image">
 
     <h1 class="pokemon__data">
@@ -23,22 +26,77 @@
       <span class="pokemon__name"></span>
     </h1>
 
+    <div class="pokemon__types"></div>
+
+    <div class="pokemon__info">
+      <p class="pokemon__height"></p>
+      <p class="pokemon__weight"></p>
+      <p class="pokemon__abilities"></p>
+    </div>
+
     <form class="form">
       <input
         type="search"
         class="input__search"
-        placeholder="Name or Number"
+        placeholder="Nome ou Número"
         required
       />
     </form>
 
     <div class="buttons">
-      <button class="button btn-prev">Prev &lt;</button>
-      <button class="button btn-next">Next &gt;</button>
+      <button class="button btn-prev">Ant </button>
+      <button class="button btn-random">Aleat</button>
+      <button class="button btn-shiny">Alt</button>
+      <button class="button btn-next">Prox </button>
     </div>
 
     <img src="./images/pokedex.png" alt="pokedex" class="pokedex">
   </main>
+
+  <div class="pokemon__stats">
+    <div class="stat">
+      <span class="stat__name">Pontos de Vida</span>
+      <div class="stat__bar">
+        <div class="stat__fill hp"></div>
+      </div>
+      <span class="stat__value"></span>
+    </div>
+    <div class="stat">
+      <span class="stat__name">Ataque</span>
+      <div class="stat__bar">
+        <div class="stat__fill atk"></div>
+      </div>
+      <span class="stat__value"></span>
+    </div>
+    <div class="stat">
+      <span class="stat__name">Defesa</span>
+      <div class="stat__bar">
+        <div class="stat__fill def"></div>
+      </div>
+      <span class="stat__value"></span>
+    </div>
+    <div class="stat">
+      <span class="stat__name">Ataque Especial</span>
+      <div class="stat__bar">
+        <div class="stat__fill sp-atk"></div>
+      </div>
+      <span class="stat__value"></span>
+    </div>
+    <div class="stat">
+      <span class="stat__name">Defesa Especial</span>
+      <div class="stat__bar">
+        <div class="stat__fill sp-def"></div>
+      </div>
+      <span class="stat__value"></span>
+    </div>
+    <div class="stat">
+      <span class="stat__name">Velocidade</span>
+      <div class="stat__bar">
+        <div class="stat__fill speed"></div>
+      </div>
+      <span class="stat__value"></span>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -9,7 +9,7 @@
 
 body {
   text-align: center;
-  background: linear-gradient(to bottom, #6ab7f5, #fff);
+  background: linear-gradient(to bottom, #4a90e2, #87ceeb);
   min-height: 100vh;
 }
 
@@ -47,6 +47,105 @@ main {
   text-transform: capitalize;
 }
 
+.pokemon__types {
+  position: absolute;
+  top: 58%;
+  right: 27%;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  font-size: clamp(6px, 3vw, 14px);
+}
+
+.pokemon__type {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: clamp(6px, 3vw, 12px);
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+/* Type colors */
+.type-normal { background-color: #A8A878; }
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-electric { background-color: #F8D030; }
+.type-grass { background-color: #78C850; }
+.type-ice { background-color: #98D8D8; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dragon { background-color: #7038F8; }
+.type-dark { background-color: #705848; }
+.type-steel { background-color: #B8B8D0; }
+
+.pokemon__info {
+  position: absolute;
+  top: 67%;
+  right: 27%;
+  font-size: clamp(6px, 3vw, 12px);
+  color: #3a444d;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.pokemon__stats {
+  width: 60%;
+  margin: 20px auto;
+  font-size: clamp(6px, 2vw, 12px);
+  color: #3a444d;
+  text-align: center;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3px;
+}
+
+.stat__name {
+  width: 50px;
+  text-align: right;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.stat__bar {
+  flex: 1;
+  max-width: 100px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin: 0 5px;
+  overflow: hidden;
+}
+
+.stat__fill {
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Stat colors */
+.stat__fill.hp { background-color: #FF0000; }
+.stat__fill.atk { background-color: #FF6600; }
+.stat__fill.def { background-color: #FFFF00; }
+.stat__fill.sp-atk { background-color: #0066FF; }
+.stat__fill.sp-def { background-color: #00DD00; }
+.stat__fill.speed { background-color: #FF0099; max-width: 120px; }
+
+.stat__value {
+  width: 25px;
+  text-align: left;
+  margin-left: 5px;
+}
+
 .form {
   position: absolute;
   width: 65%;
@@ -63,7 +162,7 @@ main {
   font-weight: 600;
   color: #3a444d;
   font-size: clamp(8px, 5vw, 1rem);
-  box-shadow: -3px 4px 0 #888, -5px 7px 0 #333
+  box-shadow: -3px 4px 0 #4a90e2, -5px 7px 0 #2e5c8a
 }
 
 .buttons {
@@ -73,22 +172,61 @@ main {
   width: 65%;
   transform: translate(-57%, 0);
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .button {
-  width: 50%;
+  width: 25%;
   padding: 4%;
   border: 2px solid #000;
   border-radius: 5px;
   font-size: clamp(8px, 5vw, 1rem);
   font-weight: 600;
   color: white;
-  background-color: #444;
-  box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+  background-color: #2e5c8a;
+  box-shadow: -2px 3px 0 #1e3a5f, -4px 6px 0 #000;
 }
 
 .button:active {
-  box-shadow: inset -4px 4px 0 #222;
+  box-shadow: inset -4px 4px 0 #1e3a5f;
   font-size: 0.9rem;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .pokemon__data {
+    font-size: clamp(6px, 4vw, 20px);
+  }
+  .pokemon__types {
+    font-size: clamp(4px, 3vw, 10px);
+  }
+  .pokemon__info {
+    font-size: clamp(4px, 2vw, 8px);
+  }
+  .input__search {
+    font-size: clamp(6px, 4vw, 0.8rem);
+  }
+  .button {
+    font-size: clamp(6px, 4vw, 0.8rem);
+  }
 }
